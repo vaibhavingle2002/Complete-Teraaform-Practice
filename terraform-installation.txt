@@ -1,0 +1,39 @@
+To install AWS CLI and Terraform on Amazon Linux (AL2 or AL2023), use these commands. Note that Amazon Linux uses yum or dnf instead of apt. 
+Amazon AWS Documentation
+Amazon AWS Documentation
+ +4
+1. Install AWS CLI 
+Amazon Linux 2023 comes with AWS CLI v2 pre-installed. If it is missing or you are on AL2, use the official installer: 
+Amazon AWS Documentation
+Amazon AWS Documentation
+bash
+# Download the installer
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# Unzip and install
+sudo yum install -y unzip
+unzip awscliv2.zip
+sudo ./aws/install
+
+# Verify installation
+aws --version
+Use code with caution.
+
+Alternative (AL2023 only): You can also use sudo dnf install awscli-2 -y. 
+2. Install Terraform
+HashiCorp provides an official repository specifically for Amazon Linux: 
+HashiCorp Developer
+HashiCorp Developer
+ +1
+bash
+# Install yum-utils for repository management
+sudo yum install -y yum-utils shadow-utils
+
+# Add the official HashiCorp repository
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+
+# Install Terraform
+sudo yum -y install terraform
+
+# Verify installation
+terraform -v
