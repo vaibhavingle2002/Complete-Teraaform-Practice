@@ -101,9 +101,26 @@ vaibhavingle2002/Complete-Teraaform-Practice.git
 │   └── 📁 Terraform-RDS-MiniProject/
 └── 📄 index.html
 
+⚙️ Setup & Deployment Guide
+Before you start, make sure you have these tools installed and set up:
 
-**Important:** Remember to clean up the resources when you're done to avoid extra costs! Use this command:
+Terraform: You need version 1.x or higher. You can check your version by running terraform --version in your terminal.
+AWS CLI: This command-line tool for Amazon Web Services needs to be installed and configured. Run aws configure in your terminal and enter your AWS access key ID, secret access key, default region, and default output format. Make sure you have the necessary permissions to manage AWS resources.
+Getting Started Workflow
+Follow these simple steps to get your project running:
 
-```bash
+Navigate to your project folder: Open your terminal and go to the directory where your Terraform project is located. For example:
+
+cd Terraform-Projects/Terraform-Modules-Project
+Initialize Terraform: This command downloads any necessary provider plugins for your project.
+
+terraform init
+Review the plan: See what changes Terraform will make to your AWS resources before applying them.
+
+terraform plan
+Apply the changes: This command provisions the resources in your AWS account.
+
+terraform apply -auto-approve
+Important: Remember to clean up the resources when you're done to avoid extra costs! Use this command:
+
 terraform destroy -auto-approve
-```
